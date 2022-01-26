@@ -2,11 +2,11 @@
 using System.Diagnostics;
 using Web_app.Models;
 
-/*using MySql.Data.MySqlClient;*/
+using MySql.Data.MySqlClient;
 
 namespace Web_app.Controllers;
 
-/*class MySqlServer
+class MySqlServer
 {
 
     string connectionString { get; } = "server=eu-cdbr-west-02.cleardb.net;port=3306;database=heroku_0bd8a63ec43f5a6;uid=b774c1c17b13b5;pwd=71218385;";
@@ -61,7 +61,7 @@ namespace Web_app.Controllers;
     }
 
 }
-*/
+
 [Controller]
 public class Shit : Controller
 {
