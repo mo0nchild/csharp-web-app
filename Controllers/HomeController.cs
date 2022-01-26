@@ -16,8 +16,8 @@ class MySqlServer
     {
 
         var connUrl = Environment.GetEnvironmentVariable("CLEARDB_DATABASE_URL");
-        string connectionAuth = "server=eu-cdbr-west-02.cleardb.net;database=heroku_0bd8a63ec43f5a6;uid=b774c1c17b13b5;pwd=71218385;";
-
+        string connectionAuth = "server=eu-cdbr-west-02.cleardb.net;database=heroku_0bd8a63ec43f5a6;uid=b774c1c17b13b5;pwd=71218385;SslMode=none;";
+/*
         if (connUrl != null) 
         {
             connUrl = connUrl.Replace("mysql://", string.Empty);
@@ -32,7 +32,7 @@ class MySqlServer
 
 
             Console.WriteLine("\n\nAuth GEN\n\n");
-        }
+        }*/
         Console.WriteLine($"\n{connectionAuth}\n\n");
         connection = new MySqlConnection(connectionAuth);
         connection.Open();
