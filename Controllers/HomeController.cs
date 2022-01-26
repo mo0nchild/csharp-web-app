@@ -53,6 +53,8 @@ class MySqlServer
             result = server.GetData();
         }
 
+        catch (Exception ex) { Console.WriteLine($"\t\n----->{ex.Message}\n\n"); }
+
         finally
         {
             server?.connection.Close();
@@ -68,7 +70,7 @@ public class Shit : Controller
     public IActionResult Index()
     {
         ListModel listModel = new ListModel { list = new List<ListElement>() { new ListElement {Name = "Test", Age = "test" } } };
-        /*try
+        try
         {
             List<MySqlServer.DatabaseTable>? tables = MySqlServer.Run();
             if (tables != null)
@@ -80,7 +82,8 @@ public class Shit : Controller
             }
 
         }
-        finally { }*/
+        //catch (Exception ex) { Console.WriteLine($"\t\n----->{ex.Message}\n\n"); }
+        finally { }
         return View("Index", listModel);
 
     }
