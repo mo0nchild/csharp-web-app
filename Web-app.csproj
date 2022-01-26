@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>shit\net6.0\MySql.Data.dll</HintPath>
+      <HintPath>Libraries\net6.0\MySql.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
 
