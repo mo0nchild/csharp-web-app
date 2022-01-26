@@ -68,7 +68,7 @@ public class Shit : Controller
     public IActionResult Index()
     {
         ListModel listModel = new ListModel { list = new List<ListElement>() { new ListElement {Name = "Test", Age = "test" } } };
-        try
+        /*try
         {
             List<MySqlServer.DatabaseTable>? tables = MySqlServer.Run();
             if (tables != null)
@@ -80,8 +80,8 @@ public class Shit : Controller
             }
 
         }
-        finally { }
-        return View();
+        finally { }*/
+        return View("Index", listModel);
 
     }
 
