@@ -6,8 +6,6 @@ using MySql.Data.MySqlClient;
 
 namespace Web_app.Controllers;
 
-//mysql://b774c1c17b13b5:71218385@eu-cdbr-west-02.cleardb.net/heroku_0bd8a63ec43f5a6?reconnect=true
-
 class MySqlServer
 {
 
