@@ -9,7 +9,7 @@ namespace Web_app.Controllers;
 class MySqlServer
 {
 
-    string connectionString { get; } = "mysql://b774c1c17b13b5:71218385@eu-cdbr-west-02.cleardb.net/heroku_0bd8a63ec43f5a6?reconnect=true";
+    string connectionString { get; } = "server=eu-cdbr-west-02.cleardb.net;database=heroku_0bd8a63ec43f5a6;uid=b774c1c17b13b5;pwd=71218385;";
     public MySqlConnection connection { private set; get; }
     public record DatabaseTable(string Name, string Age);
 
@@ -34,6 +34,7 @@ class MySqlServer
                 result.Add(new DatabaseTable($"{sqlDataReader["Name"]}", $"{sqlDataReader["Age"]}"));
             }
         }
+        catch (Exception ex) { Console.WriteLine($"\t\n----->{ex.Message}\n\n"); }
         finally
         {
             sqlDataReader?.Close();
