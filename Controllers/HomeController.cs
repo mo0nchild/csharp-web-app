@@ -4,6 +4,7 @@ using Web_app.Models;
 
 namespace Web_app.Controllers;
 
+[Controller]
 public class Shit : Controller
 {
     public IActionResult Index()
