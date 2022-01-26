@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+using System.Net;
 
 namespace MyApp;
 
@@ -6,6 +7,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
+
+        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
