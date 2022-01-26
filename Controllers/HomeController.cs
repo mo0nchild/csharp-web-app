@@ -34,7 +34,7 @@ class MySqlServer
                 result.Add(new DatabaseTable($"{sqlDataReader["Name"]}", $"{sqlDataReader["Age"]}"));
             }
         }
-        catch (Exception ex) { Console.WriteLine($"\t\n----->{ex.Message}\n\n"); }
+        catch (Exception ex) { Console.WriteLine($"\t\n----->{ex.Message}\n----->{ex.InnerException.Message}\n"); }
         finally
         {
             sqlDataReader?.Close();
@@ -54,7 +54,7 @@ class MySqlServer
             result = server.GetData();
         }
 
-        catch (Exception ex) { Console.WriteLine($"\t\n----->{ex.Message}\n\n"); }
+        catch (Exception ex) { Console.WriteLine($"\t\n----->{ex.Message}\n----->{ex.InnerException.Message}\n"); }
 
         finally
         {
