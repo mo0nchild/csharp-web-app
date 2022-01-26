@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+
 namespace MyApp;
 
 public class Program 

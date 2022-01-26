@@ -2,7 +2,17 @@
 {
     public class ListModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; } = "Null";
+        public List<ListElement> list { get; set; }
+        public ListModel()
+        {
+            list = new List<ListElement> { };
+        }
     }
+
+    public class ListElement 
+    {
+        public string Age { get; set; }
+        public string Name { get; set; }
+    }
+
 }
