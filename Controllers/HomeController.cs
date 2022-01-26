@@ -30,7 +30,7 @@ class MySqlServer
             var connDb = hostSide.Split("/")[1].Split("?")[0];
             connectionAuth = $"server={connHost};Uid={connUser};Pwd={connPass};Database={connDb}";
         }
-
+        Console.WriteLine($"\n{connectionAuth}\n\n");
         connection = new MySqlConnection(connectionAuth);
         connection.Open();
     }
