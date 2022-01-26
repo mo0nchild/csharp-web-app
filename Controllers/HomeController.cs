@@ -9,7 +9,7 @@ namespace Web_app.Controllers;
 class MySqlServer
 {
 
-    string connectionString { get; } = "server=eu-cdbr-west-02.cleardb.net;port=3306;database=heroku_0bd8a63ec43f5a6;uid=b774c1c17b13b5;pwd=71218385;";
+    string connectionString { get; } = "mysql://b774c1c17b13b5:71218385@eu-cdbr-west-02.cleardb.net/heroku_0bd8a63ec43f5a6?reconnect=true";
     public MySqlConnection connection { private set; get; }
     public record DatabaseTable(string Name, string Age);
 
