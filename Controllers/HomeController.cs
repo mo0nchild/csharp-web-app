@@ -29,6 +29,9 @@ class MySqlServer
             var connHost = hostSide.Split("/")[0];
             var connDb = hostSide.Split("/")[1].Split("?")[0];
             connectionAuth = $"server={connHost};Uid={connUser};Pwd={connPass};Database={connDb}";
+
+
+            Console.WriteLine("\n\nAuth GEN\n\n");
         }
         Console.WriteLine($"\n{connectionAuth}\n\n");
         connection = new MySqlConnection(connectionAuth);
