@@ -67,7 +67,7 @@ public class Shit : Controller
 {
     public IActionResult Index()
     {
-        /*ListModel listModel = new ListModel();
+        ListModel listModel = new ListModel();
         try
         {
             List<MySqlServer.DatabaseTable>? tables = MySqlServer.Run();
@@ -83,8 +83,7 @@ public class Shit : Controller
         finally { }
 
         ViewBag.C = "dasd";
-        return View("Index", listModel);*/
-        return View();
+        return View("Index", listModel);
 
     }
 
