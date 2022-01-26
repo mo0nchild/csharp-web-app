@@ -9,13 +9,29 @@ namespace Web_app.Controllers;
 class MySqlServer
 {
 
-    string connectionString { get; } = "server=eu-cdbr-west-02.cleardb.net;database=heroku_0bd8a63ec43f5a6;uid=b774c1c17b13b5;pwd=71218385;";
     public MySqlConnection connection { private set; get; }
     public record DatabaseTable(string Name, string Age);
 
     private MySqlServer()
     {
-        connection = new MySqlConnection(connectionString);
+
+        var connUrl = Environment.GetEnvironmentVariable("CLEARDB_DATABASE_URL");
+        string connectionAuth = "server=eu-cdbr-west-02.cleardb.net;database=heroku_0bd8a63ec43f5a6;uid=b774c1c17b13b5;pwd=71218385;";
+
+        if (connUrl != null) 
+        {
+            connUrl = connUrl.Replace("mysql://", string.Empty);
+            var userPassSide = connUrl.Split("@")[0];
+            var hostSide = connUrl.Split("@")[1];
+
+            var connUser = userPassSide.Split(":")[0];
+            var connPass = userPassSide.Split(":")[1];
+            var connHost = hostSide.Split("/")[0];
+            var connDb = hostSide.Split("/")[1].Split("?")[0];
+            connectionAuth = $"server={connHost};Uid={connUser};Pwd={connPass};Database={connDb}";
+        }
+
+        connection = new MySqlConnection(connectionAuth);
         connection.Open();
     }
 
