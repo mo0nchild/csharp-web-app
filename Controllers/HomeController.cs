@@ -67,7 +67,7 @@ public class Shit : Controller
 {
     public IActionResult Index()
     {
-        ListModel listModel = new ListModel();
+        ListModel listModel = new ListModel { list = new List<ListElement>() };
         try
         {
             List<MySqlServer.DatabaseTable>? tables = MySqlServer.Run();
