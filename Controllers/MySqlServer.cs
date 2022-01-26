@@ -23,7 +23,7 @@ class MySqlServer
                     connHost = hostSide.Split("/")[0],
                     connDb = hostSide.Split("/")[1].Split("?")[0];
 
-                return $"server={connHost};Uid={connUser};Pwd={connPass};Database={connDb}";
+                return $"server={connHost};Uid={connUser};Pwd={connPass};Database={connDb};SslMode=none;";
             }
             return null;
         }
